@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ServiceCard from "../../Shared/ServiceCard/ServiceCard";
+import ServiceCard from "../../../Shared/ServiceCard/ServiceCard";
 
-const Services = () => {
+const LimitedService = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch("http://localhost:5000/limited-services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -13,19 +13,19 @@ const Services = () => {
   return (
     <div>
       <div className="text-center my-6">
-        <p className="text-2xl font-bold text-orange-600">Service</p>
+        <p className="text-2xl font-bold text-orange-600">Some Service of us</p>
         <h2 className="text-4xl font-semibold">Our Services Area</h2>
       </div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
-        {
-          services.map(service=><ServiceCard
-          key={service._id}
-          service={service}
-          ></ServiceCard>)
-        }
+        {services.map((service) => (
+          <ServiceCard key={service._id} service={service}></ServiceCard>
+        ))}
+      </div>
+      <div>
+        
       </div>
     </div>
   );
 };
 
-export default Services;
+export default LimitedService;
