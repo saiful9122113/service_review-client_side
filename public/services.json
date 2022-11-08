@@ -1,0 +1,44 @@
+[
+    {
+        "_id":1,
+        "name": "Wedding Photography",
+        "img": "https://london.bridestory.com/images/c_fill,dpr_1.0,f_auto,fl_progressive,pg_1,q_80,w_680/v1/assets/dec_6454-SJrn4q0VE/alienco-photography_muslim-wedding-dini-angga_2.jpg",
+        "description": "Many people go their entire lives and only pay for professional photography once, but nearly everyone hires a photographer for their wedding.As a job, being a professional wedding photographer involves an exciting mix of portraiture and event photography in a wide variety of settings and groups. Wedding photography is pretty intense, with the element of getting the best shot on the first try and not really getting a second chance in some situations. The emphasis is on capturing the moment and documenting natural, candid pictures that the family will treasure for a lifetime. Wedding photographers have to be quick on their feet, moving around during events, and there are substantial sales and customer service components to their jobs.",
+        "charge": "15000"
+    },
+    {
+        "_id":2,
+        "name": "Wildlife Photography",
+        "img": "https://imageio.forbes.com/specials-images/imageserve/634ff373da2c935f128e9c6e/Funny-photo-of-a-crane-attacking-a-bull-from-behind-/960x0.jpg?format=jpg&width=960",
+        "description": "Wildlife photography is another category. It can be an adventurous type of photography, though not always, and tend to require a lot of patience.As well as requiring photography skills, wildlife photographers may need field craft skills. For example, some animals and birds are difficult to approach and thus a knowledge of the animal's and birds behavior is needed in order to be able to predict its actions",
+        "charge": "40000"
+    },
+    {
+        "_id":3,
+        "name": "Architectural Photography",
+        "img": "https://www.planetkb.co.za/cmsAdmin/uploads/architectural-sandton-johannesburg.jpg",
+        "description": "While many find taking pictures of buildings to be a fun hobby, many specialized photographers make careers out of it. Employed by architectural agencies or working as freelancers, these photographers capture the essence of buildings from inception to completion. Details captured include the exteriors and interiors, and subtle details that make the building's design unique. Architectural photography requires some special techniques and equipment to minimize distortion and perspective problems that become apparent on a building’s many right angles",
+        "charge": "15000"
+    },
+    {
+        "_id":4,
+        "name": "Aerial Photography",
+        "img": "https://media-cdn.tripadvisor.com/media/photo-s/1b/57/0f/b2/aerial-photography.jpg",
+        "description": "A burgeoning field of photography born from modern technology is an aerial photographer. Sure, aerial images have been around as long as manned flight and cameras have been. But today, unmanned aerial vehicles, also called drones, are being used for aerial views and different perspective shots by photographers. In the US and most countries, commercial drone pilots must be licensed. The process is relatively simple and usually requires only a written exam. Aerial photography is now used for everything from architectural and real estate photography to weddings and events. The unique perspective given by drones can’t be beaten for uniqueness and beauty.",
+        "charge": "20000"
+    },
+    {
+        "_id":5,
+        "name": "Sports Photography",
+        "img": "https://media.istockphoto.com/id/465383082/photo/female-swimmer-at-the-swimming-pool.jpg?s=612x612&w=0&k=20&c=tcTwN2rTvUBK4wddan_GUCxrXX6bBoU-hyrVMvmT0BM=",
+        "description": "When people think of sports photographers, it is sometimes easy to only think about the most popular professional sports – like basketball, football, basketball, soccer, and hockey. But truthfully, sports photographers are needed in so many more areas – like swimming, running, water polo, paddling, martial arts, lacrosse, track and field, etc. The list can go on for days.",
+        "charge": "25000"
+    },
+    {
+        "_id":6,
+        "name": "Travel Photography",
+        "img": "https://media.istockphoto.com/photos/weve-made-it-all-this-way-i-am-proud-picture-id904172104?b=1&k=20&m=904172104&s=170667a&w=0&h=cpH1h5ENopSwP2hB-zlAxeg3Gry9KkcBReSsBV1zyzQ=",
+        "description": "Do you love to travel? Would you like to get paid for it? Who doesn’t? Travel photography allows you to do just that while having fun with your camera in dynamic settings. Travel photography blends many different types of photography into one. On one trip you might want to focus on the people and the lifestyles present in a place, while also capturing the landscapes and the natural world in which it’s located. Macro details and wildlife photography might be included too. Be it on the beaches of Bali or the ice fields of Antartica, the job of a travel photographer is to transport their audience to that place without them having to leave home.",
+        "charge": "30000"
+    }
+]
