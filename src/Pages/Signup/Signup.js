@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
-const handleSignup = (event) => {
-    event.preventDefault();
-  };
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Signup = () => {
+    const {createUser} = useContext(AuthContext);
+    const handleSignup = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        // const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err=>console.error(err));
+      };
+
   return (
     <div className="hero bg-gray-700">
       <div className="hero-content w-3/4 flex-col">
