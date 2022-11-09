@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import {  useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import Reviews from "../../Reviews/Reviews";
 
 const CheckOut = () => {
   const { _id, name, img, description, charge } = useLoaderData();
@@ -10,14 +11,16 @@ const CheckOut = () => {
     event.preventDefault();
     const form = event.target;
     const email = user?.email || 'unregistered';
-    const name = form.value;
+    const photo = user?.photoURL;
+    const customerName = form.name.value;
     const review = form.message.value;
 
     const reviews = {
         service: _id,
         serviceName: name,
+        photo,
         price: charge,
-        customer: name,
+        customerName,
         email,
         review
     }
@@ -61,14 +64,6 @@ const CheckOut = () => {
             className="bg-indigo-900 my-3 w-1/2 input input-ghost w-full"
           />
           <br />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            className="bg-indigo-900 my-3 w-1/2 input input-ghost w-full"
-          />
-          <br />
-          {/* <input name="" type="text" placeholder="Type your Review" className="bg-indigo-900 my-3 w-1/2 input input-ghost w-full" /><br/> */}
           <textarea
             name="message"
             className="textarea textarea-bordered bg-indigo-900 my-3 w-1/2 h-24 mb-1"
@@ -78,11 +73,11 @@ const CheckOut = () => {
           <input
             className=" btn my-3 bg-indigo-900 px-11"
             type="submit"
-            value="Place Your Order"
+            value="Place Your Review"
           />
-          {/* <input type="image" src="submit.gif" alt="Submit" width="48" height="48"></input> */}
         </form>
       </div>
+      <Reviews></Reviews>
     </div>
   );
 };

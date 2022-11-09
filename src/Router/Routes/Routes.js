@@ -5,6 +5,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
+import Reviews from "../../Reviews/Reviews";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -43,6 +44,11 @@ const { createBrowserRouter } = require("react-router-dom");
           element: <CheckOut></CheckOut>,
           loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
+
+        {
+          path: '/review',
+          element: <Reviews></Reviews>
+        }
       ]
     } 
   ])
