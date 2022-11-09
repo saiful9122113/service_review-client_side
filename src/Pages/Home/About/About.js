@@ -3,7 +3,7 @@ import img from '../../../images/photographer.jpg'
 
 const About = () => {
   return (
-    <div className="hero bg-base-200">
+    <div className="hero bg-base-200 p-4">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/3">
           <img alt=""
