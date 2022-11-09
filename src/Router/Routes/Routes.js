@@ -1,5 +1,6 @@
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
+import CheckOut from "../../Pages/CheckOut/CheckOut";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Services from "../../Pages/Services/Services";
@@ -35,6 +36,12 @@ const { createBrowserRouter } = require("react-router-dom");
         {
           path: '/blogs',
           element: <Blogs></Blogs>
+        },
+
+        {
+          path: '/checkout/:id',
+          element: <CheckOut></CheckOut>,
+          loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
       ]
     } 
