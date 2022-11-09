@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "../../../Shared/ServiceCard/ServiceCard";
 
 const LimitedService = () => {
@@ -21,8 +22,12 @@ const LimitedService = () => {
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
-      <div>
-        
+      <div className="text-center">
+        <button className="btn btn-primary my-4 px-12">
+        <Link className="text-orange-600 font-bold" to="/services" href="">
+          See All Services
+        </Link>
+        </button>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const ServiceCard = ({service}) => {
         <p>{description?.substring(0,100)}...</p>
         <h2 className="font-semibold">Charge : {charge}</h2>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">Show details</button>
         </div>
       </div>
     </div>

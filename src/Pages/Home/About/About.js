@@ -25,7 +25,7 @@ const About = () => {
           <p className="py-1">
           In order to work well with their clients, they need strong interpersonal and customer service skills, in addition to self-confidence. Which is the strong zone for me
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          {/* <button className="btn btn-primary">Get Started</button> */}
         </div>
       </div>
     </div>
