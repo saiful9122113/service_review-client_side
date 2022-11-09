@@ -4,6 +4,7 @@ import CheckOut from "../../Pages/CheckOut/CheckOut";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import LogOut from "../../Pages/LogOut/LogOut";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
 import Reviews from "../../Reviews/Reviews";
@@ -23,6 +24,11 @@ const { createBrowserRouter } = require("react-router-dom");
         {
           path: '/login',
           element: <Login></Login>
+        },
+
+        {
+          path: '/logout',
+          element: <LogOut></LogOut>
         },
 
         {
@@ -57,7 +63,7 @@ const { createBrowserRouter } = require("react-router-dom");
       path:'/*',
       element: <ErrorPage></ErrorPage>
     }
-    
+
   ])
 
   export default router;
