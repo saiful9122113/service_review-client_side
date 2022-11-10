@@ -2,15 +2,28 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import image from "../../images/icon.png"
+import logout from "../../Pages/LogOut/LogOut";
 
 const Header = () => {
   
-  const {user} = useContext(AuthContext);
+  const {user, setUser} = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout();
+    setUser(null);
+  }
 
     const menuItems = <>
         <li className="font-simebold"><Link to='/'>Home</Link></li>
         {
-          user?.email? <li className="font-simebold"><Link to='/logout'>Logout</Link></li> : <li className="font-simebold"><Link to='/login'>Login</Link></li>
+          user?.email? 
+          <div className="flex justify-between items-center">
+              <li className="font-simebold"><Link to='/addservice'>Add Service</Link></li>
+              <li className="font-simebold"><Link to='/my-reviews'>My reviews</Link></li>
+              <li className="font-simebold"><Link to='/login' onClick={handleLogout}>Logout</Link></li>
+          </div>
+           : 
+          <li className="font-simebold"><Link to='/login'>Login</Link></li>
         }
         
         

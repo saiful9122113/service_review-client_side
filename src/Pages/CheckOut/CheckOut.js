@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {  useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import Reviews from "../../Reviews/Reviews";
 
@@ -7,40 +7,40 @@ const CheckOut = () => {
   const { _id, name, img, description, charge } = useLoaderData();
   const { user } = useContext(AuthContext);
 
-  const handleReview = event =>{
+  const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const email = user?.email || 'unregistered';
+    const email = user?.email || "unregistered";
     const photo = user?.photoURL;
     const customerName = form.name.value;
     const review = form.message.value;
 
     const reviews = {
-        service: _id,
-        serviceName: name,
-        photo,
-        price: charge,
-        customerName,
-        email,
-        review
-    }
-    fetch('http://localhost:5000/reviews',{
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(reviews)
+      service: _id,
+      serviceName: name,
+      photo,
+      price: charge,
+      customerName,
+      email,
+      review,
+    };
+    fetch("https://b6a11-service-review-server-side-one.vercel.app/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reviews),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.acknowledged){
-            alert('Reviewed successfully')
-            form.reset();
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("Reviewed successfully");
+          form.reset();
         }
-    })
-    .catch(er=>console.error(er));
-  }
+      })
+      .catch((er) => console.error(er));
+  };
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -54,30 +54,42 @@ const CheckOut = () => {
         </div>
       </div>
 
-      <div>
-        <form onSubmit={handleReview} className="text-center">
-          <h2 className="text-4xl">You are about to review {name} service</h2>
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            className="bg-indigo-900 my-3 w-1/2 input input-ghost w-full"
-          />
-          <br />
-          <textarea
-            name="message"
-            className="textarea textarea-bordered bg-indigo-900 my-3 w-1/2 h-24 mb-1"
-            placeholder="Review"
-          ></textarea>
-          <br />
-          <input
-            className=" btn my-3 bg-indigo-900 px-11"
-            type="submit"
-            value="Place Your Review"
-          />
-        </form>
-      </div>
-      <Reviews></Reviews>
+      {user?.email ? (
+        <div>
+          <form onSubmit={handleReview} className="text-center">
+            <h2 className="text-4xl">You are about to review {name} service</h2>
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              className="bg-indigo-900 my-3 w-1/2 input input-ghost w-full"
+            />
+            <br />
+            <textarea
+              name="message"
+              className="textarea textarea-bordered bg-indigo-900 my-3 w-1/2 h-24 mb-1"
+              placeholder="Review"
+            ></textarea>
+            <br />
+            <input
+              className=" btn my-3 bg-indigo-900 px-11"
+              type="submit"
+              value="Place Your Review"
+            />
+          </form>
+        </div>
+      ) : (
+        <div className="text-center">
+          <p>
+            Please log in to drop yout review. {' '}
+            <Link className="text-orange-600 font-bold btn px-6" to="/login" href="">
+            Log In
+          </Link>
+          </p>
+        </div>
+      )}
+
+      <Reviews service={_id}></Reviews>
     </div>
   );
 };

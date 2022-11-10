@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
 import ReviewCard from "./ReviewCard";
 
-const Reviews = () => {
+const Reviews = ({service}) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/review')
+    // const {user} = useContext(AuthContext);
+    // fetch('https://b6a11-service-review-server-side-one.vercel.app/review')
+    fetch(`https://b6a11-service-review-server-side-one.vercel.app/review?service=${service}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -16,6 +19,7 @@ const Reviews = () => {
         <p className="text-2xl font-bold text-orange-600">Reviews</p>
         <h2 className="text-4xl font-semibold">Our Reviews Area</h2>
       </div>
+    
       <div className="grid gap-6 grid-cols-1 md:grid-cols:2 lg:grid-cols-3">
         {
           reviews.map(singleReview=><ReviewCard

@@ -6,6 +6,7 @@ import image4 from '../../../images/banner/b4.jpg';
 import image5 from '../../../images/banner/b5.jpg';
 import image6 from '../../../images/banner/b6.jpg';
 
+
 const Banner = () => {
   return (
     <div className="carousel  w-full">

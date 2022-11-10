@@ -6,7 +6,7 @@ const LimitedService = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/limited-services")
+    fetch("https://b6a11-service-review-server-side-one.vercel.app/limited-services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
