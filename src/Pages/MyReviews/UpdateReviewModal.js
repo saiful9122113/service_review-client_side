@@ -42,7 +42,7 @@ const UpdateReviewModal = ({
       return alert("Review must!");
     }
 
-    fetch(`http://localhost:5000/update-review?id=${review._id}`, {
+    fetch(`https://b6a11-service-review-server-side-one.vercel.app/update-review?id=${review._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -19,7 +19,7 @@ const MyReviews = () => {
 
   useEffect(() => {
     if (!user.email) return;
-    fetch(`http://localhost:5000/review?email=${user.email}`, {
+    fetch(`https://b6a11-service-review-server-side-one.vercel.app/review?email=${user.email}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -30,7 +30,7 @@ const MyReviews = () => {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/delete-review?id=${id}`, {
+    fetch(`https://b6a11-service-review-server-side-one.vercel.app/delete-review?id=${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

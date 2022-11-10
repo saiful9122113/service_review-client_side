@@ -24,6 +24,7 @@ const CheckOut = () => {
       email,
       review,
     };
+    
     fetch("https://b6a11-service-review-server-side-one.vercel.app/reviews", {
       method: "POST",
       headers: {
